@@ -5,10 +5,11 @@ import { getGuessStatuses } from './statuses'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 export const isWordInWordList = (word: string) => {
-  return (
-    WORDS.includes(localeAwareLowerCase(word)) ||
-    VALID_GUESSES.includes(localeAwareLowerCase(word))
-  )
+//   return (
+//     WORDS.includes(localeAwareLowerCase(word)) ||
+//     VALID_GUESSES.includes(localeAwareLowerCase(word))
+//   )
+    return true
 }
 
 export const isWinningWord = (word: string) => {
@@ -75,6 +76,7 @@ export const localeAwareUpperCase = (text: string) => {
 }
 
 export const getWordOfDay = () => {
+  // Removed worlds timeout
   // January 1, 2022 Game Epoch
   const epoch = new Date(2022, 0)
   const start = new Date(epoch)
@@ -90,7 +92,7 @@ export const getWordOfDay = () => {
   nextDay.setDate(today.getDate() + 1)
 
   return {
-    solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
+    solution: localeAwareUpperCase(WORDS[Math.floor(Math.random() * WORDS.length)]),
     solutionIndex: index,
     tomorrow: nextDay.valueOf(),
   }

@@ -8,63 +8,62 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Как играть" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        Угадайте пароль за 6 попыток. Используются 2000 самых популярных паролей. После каждой попытки цвет ячеек с
+        буквами будет меняться, чтобы показать вам, насколько вы близки к загаданному паролю.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="W"
+          value="С"
           status="correct"
         />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="Л" />
+        <Cell value="О" />
+        <Cell value="В" />
+        <Cell value="О" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        Буква С есть в загаданном пароле и стоит в нужном месте.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
+        <Cell value="Б" />
+        <Cell value="У" />
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value="К"
           status="present"
         />
-        <Cell value="O" />
-        <Cell value="T" />
+        <Cell value="В" />
+        <Cell value="А" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        Буква К есть в загаданном пароле, но стоит в другом месте.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" />
+        <Cell value="И" />
+        <Cell value="Г" />
+        <Cell value="Р" />
+        <Cell isRevealing={true} isCompleted={true} value="О" status="absent" />
+        <Cell value="К" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        Буквы О нет в загаданном пароле.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+        Это открытая и русифицированная версия игры Wordle -{' '}
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
+          href="https://github.com/K0mp0t/react-wordle-ru"
           className="underline font-bold"
         >
-          check out the code here
+          здесь вы можете найти код
         </a>{' '}
       </p>
     </BaseModal>
